@@ -1,4 +1,3 @@
-// Everything in JavaScript is an object and this is important because
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
