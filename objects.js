@@ -60,7 +60,19 @@ Dog.prototype = Animal.prototype;
 // check the prototype
 const pet = new Dog("Leo", "woof");
 
-// null -> Object -> Vehicle -> Car -> BMW -> FiveSeries -> my528
+// Prototype chain example null -> Object -> Vehicle -> Car -> BMW -> FiveSeries -> my528
+
+// Assigment - add 2 or 3 new properties to each class.
+// Create an instance of each class. Examples
+// const truck = new Vehicle()
+// const benz = new Car()
+// const newBMW = new BMW()
+// const my2016 = new FiveSeries()
+
+// add a debugger and simply follow the prototype chain
+// redefine the prototype chain and inheritance in your own words
+
+// Hierarchy of Vehicles example
 class Vehicle {
   constructor(year, style) {
     this.year = year;
@@ -87,6 +99,3 @@ class FiveSeries extends BMW {
 }
 
 const my528 = new FiveSeries("2016");
-
-// Create a hierarchy of classes
-// Add unique properties to each class and
