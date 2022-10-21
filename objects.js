@@ -4,10 +4,23 @@
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/super
 
 // null -> Object
+// What is the prototype of human?
 const human = {
   legs: 2,
   eyes: 2,
 };
+
+const human2 = new Object({
+  legs: 2,
+  eyes: 2,
+});
+
+// DRY, Single Responsibily Principle, Big O
+
+// Give definition of prototype inheritance:
+// Everything in JavaScript is an object
+
+// private link: __proto__
 
 // null -> Object -> Object(human) -> person
 const person = {
@@ -42,19 +55,38 @@ function Dog(name, sound) {
   this.sound = sound;
 }
 
-// Dog.prototype = Animal.prototype;
+Dog.prototype = Animal.prototype;
 
 // check the prototype
 const pet = new Dog("Leo", "woof");
 
 // null -> Object -> Vehicle -> Car -> BMW -> FiveSeries -> my528
 class Vehicle {
-  constructor(year) {
+  constructor(year, style) {
     this.year = year;
+    this.style = style;
   }
 }
-class Car extends Vehicle {}
-class BMW extends Car {}
-class FiveSeries extends BMW {}
+class Car extends Vehicle {
+  constructor(year, convertible) {
+    super(year);
+    this.convertible = convertible;
+  }
+}
+
+class BMW extends Car {
+  constructor(year, series) {
+    super(year);
+    this.series = series;
+  }
+}
+class FiveSeries extends BMW {
+  constructor(year) {
+    super(year);
+  }
+}
 
 const my528 = new FiveSeries("2016");
+
+// Create a hierarchy of classes
+// Add unique properties to each class and
