@@ -34,13 +34,18 @@ function Animal(name) {
   this.name = name;
 }
 
+Animal.prototype.walk = function () {
+  console.log("I am walking");
+};
+
 function Dog(name, sound) {
   Animal.call(this, name);
   this.sound = sound;
 }
 
-Dog.prototype = Animal.prototype;
+// Dog.prototype = Animal.prototype;
 
+// check the prototype
 const pet = new Dog("Leo", "woof");
 
 // null -> Object -> Vehicle -> Car -> BMW -> FiveSeries -> my528
