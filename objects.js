@@ -72,6 +72,37 @@ const pet = new Dog("Leo", "woof");
 // add a debugger and simply follow the prototype chain
 // redefine the prototype chain and inheritance in your own words
 
+function Destination(name, location, photo, description) {
+  this.name = name;
+  this.location = location;
+  this.photo = photo;
+  this.description = description;
+}
+
+class Location {
+  constructor(name, location) {
+    this.name = name;
+    this.location = location;
+  }
+}
+
+class Destination extends Location {
+  constructor(name, location, photo, description, hosts) {
+    super(name, location);
+    this.photo = photo;
+    this.description = description;
+    this.hosts = hosts;
+  }
+}
+
+const losAngeles = new Destination("LA", "CA", "someUrl", "expensive place");
+const boston = new Destination(
+  "BOS",
+  "MA",
+  "nextUrl",
+  "over rated sports teams"
+);
+
 // Hierarchy of Vehicles example
 class Vehicle {
   constructor(year, style) {
